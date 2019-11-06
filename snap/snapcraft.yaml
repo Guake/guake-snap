@@ -27,6 +27,7 @@ environment:
 apps:
   guake:
     command:  usr/local/bin/guake
+    desktop: usr/local/share/applications/guake.desktop
     extensions: [gnome-3-28]
     slots:
      - dbus-guake
