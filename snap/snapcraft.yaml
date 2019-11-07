@@ -26,7 +26,7 @@ environment:
 
 apps:
   guake:
-    command:  usr/local/bin/guake
+    command: usr/local/bin/guake
     desktop: usr/local/share/applications/guake.desktop
     extensions: [gnome-3-28]
     slots:
@@ -67,6 +67,7 @@ parts:
     override-build: |
       snapcraftctl build
       sed -i 's|#!/root/parts/guake/install/usr/bin/python3|#!/usr/bin/env python3|' $SNAPCRAFT_PART_INSTALL/usr/local/bin/guake
+      sed -i "s|Icon=guake|Icon=/meta/gui/icon.png|" $SNAPCRAFT_PART_INSTALL/usr/local/share/applications/guake.desktop
 
 
 
